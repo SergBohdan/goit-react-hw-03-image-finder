@@ -8,11 +8,7 @@ class Searchbar extends Component {
 
   handleSubmit = evt => {
     evt.preventDefault();
-    const searchItem = this.state.query.trim();
-    if (!searchItem) {
-      alert('Hooray! You found a void...');
-    }
-    this.props.onSubmit(searchItem);
+    this.props.onSubmit(this.state.query.trim());
     this.setState({ query: '' });
   };
 
@@ -22,10 +18,10 @@ class Searchbar extends Component {
 
   render() {
     return (
-      <header>
-        <form onSubmit={this.handleSubmit}>
-          <button type='submit'>
-            <span>Search</span>
+      <header className='Searchbar'>
+        <form className="SearchForm" onSubmit={this.handleSubmit}>
+          <button type="submit" className="SearchForm-button">
+            <span className="SearchForm-button-label">Search</span>
           </button>
 
           <input
@@ -36,6 +32,7 @@ class Searchbar extends Component {
             value={this.state.query}
             onChange={this.handleChange}
             name="query"
+            className="SearchForm-input"
           />
         </form>
       </header>

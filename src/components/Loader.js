@@ -1,9 +1,17 @@
 import React from 'react';
-import LoaderSpinner from 'react-loader-spinner';
+import { Circles } from 'react-loader-spinner';
 
 const Loader = () => (
   <div className="loader">
-    <LoaderSpinner type="Puff" color="#00BFFF" height={100} width={100} />
+    <Circles
+      height="80"
+      width="80"
+      color="#4fa94d"
+      ariaLabel="circles-loading"
+      wrapperStyle={{}}
+      wrapperClass=""
+      visible={true}
+    />
   </div>
 );
 

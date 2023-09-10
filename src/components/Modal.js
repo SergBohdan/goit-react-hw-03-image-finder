@@ -21,10 +21,6 @@ class Modal extends Component {
     }
   };
 
-  handleImageClick = () => {
-    this.props.onClose(); 
-  };
-
   render() {
     const { largeImageURL } = this.props;
 
@@ -34,8 +30,7 @@ class Modal extends Component {
           <img
             src={largeImageURL}
             alt="Large"
-            onClick={this.handleImageClick} 
-          />
+            />
         </div>
       </div>
     );

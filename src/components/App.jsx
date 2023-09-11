@@ -32,15 +32,10 @@ class App extends Component {
   
     try {
       const newImages = await fetchImages(query, page); 
-  
-      if (newImages.length < 12) {
-        this.setState({ showButton: false });
-      } else {
-        this.setState({ showButton: true });
-      }
-  
+   
       this.setState((prevState) => ({
         images: [...prevState.images, ...newImages],
+        showButton: newImages.length < 12 ? false : true,
       }));
     } catch (error) {
       console.error('Error getting images:', error);
